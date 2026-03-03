@@ -11,9 +11,9 @@
     --color-white: #ffffff;
     --color-off-white: #f8f9fa;
     --color-cream: #fdfcfb;
-    --color-accent: #e67e22;
-    --color-accent-dark: #d35400;
-    --color-accent-light: #f39c12;
+    --color-accent: #DBEBEB;
+    --color-accent-dark: #b8d4d4;
+    --color-accent-light: #e8f3f3;
     --color-blue: #2c3e50;
     --color-blue-light: #34495e;
     --color-gray: #636e72;
@@ -133,13 +133,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-primary {
     background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
-    color: var(--color-white);
-    box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
+    color: var(--color-anthracite-dark);
+    box-shadow: 0 4px 15px rgba(219, 235, 235, 0.4);
+    font-weight: 700;
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(230, 126, 34, 0.4);
+    box-shadow: 0 6px 20px rgba(219, 235, 235, 0.6);
+    background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
 }
 
 .btn-secondary {
@@ -201,23 +203,21 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-logo {
     display: flex;
-    flex-direction: column;
+    align-items: center;
 }
 
-.logo-text {
-    font-family: var(--font-heading);
-    font-size: 1.4rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    color: var(--color-anthracite-dark);
+.logo-image {
+    height: 60px;
+    width: auto;
+    transition: transform var(--transition-base);
 }
 
-.logo-subtitle {
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 1px;
-    color: var(--color-accent);
-    text-transform: uppercase;
+.logo-image:hover {
+    transform: scale(1.05);
+}
+
+.navbar.scrolled .logo-image {
+    height: 50px;
 }
 
 .nav-menu {
@@ -254,9 +254,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-link.nav-cta {
     background: var(--color-accent);
-    color: var(--color-white);
+    color: var(--color-anthracite-dark);
     padding: 12px 24px;
     border-radius: var(--radius-md);
+    font-weight: 700;
 }
 
 .nav-link.nav-cta::after {
@@ -265,6 +266,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-link.nav-cta:hover {
     background: var(--color-accent-dark);
+    color: var(--color-anthracite-dark);
 }
 
 .nav-toggle {
