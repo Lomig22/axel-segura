@@ -686,6 +686,159 @@ section {
     z-index: 1;
 }
 
+/* Histoire Section */
+.histoire {
+    background: var(--color-white);
+    padding: 100px 0;
+}
+
+.histoire-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.histoire-content {
+    max-width: 600px;
+}
+
+.histoire-text {
+    margin-top: 30px;
+}
+
+.histoire-intro {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--color-accent-dark);
+    margin-bottom: 20px;
+}
+
+.histoire-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-gray);
+    margin-bottom: 20px;
+}
+
+.histoire-highlight {
+    background: var(--color-off-white);
+    padding: 30px;
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--color-accent);
+    margin: 30px 0;
+    display: flex;
+    gap: 20px;
+}
+
+.highlight-icon {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.highlight-icon svg {
+    width: 30px;
+    height: 30px;
+    color: var(--color-anthracite-dark);
+}
+
+.highlight-content h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--color-anthracite-dark);
+}
+
+.highlight-content p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--color-gray);
+    margin: 0;
+}
+
+.histoire-quote {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--color-anthracite);
+    padding: 20px 30px;
+    border-left: 4px solid var(--color-accent);
+    background: var(--color-cream);
+    border-radius: var(--radius-md);
+    margin-top: 30px;
+}
+
+.histoire-image-wrapper {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.histoire-image-placeholder {
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    color: var(--color-anthracite-dark);
+}
+
+.histoire-image-placeholder svg {
+    width: 80px;
+    height: 80px;
+    opacity: 0.7;
+}
+
+.histoire-image-placeholder span {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.8;
+    font-weight: 600;
+}
+
+.histoire-badges {
+    display: flex;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.badge-item {
+    flex: 1;
+    background: var(--color-white);
+    padding: 20px;
+    border-radius: var(--radius-md);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+}
+
+.badge-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.badge-text {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-anthracite);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
 /* Réalisations Section */
 .realisations {
     background: var(--color-off-white);
@@ -948,6 +1101,155 @@ section {
 .step-content p {
     color: var(--color-gray);
     line-height: 1.7;
+}
+
+/* Recrutement Section */
+.recrutement {
+    background: var(--color-off-white);
+    padding: 100px 0;
+}
+
+.recrutement-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.recrutement-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.recrutement-content {
+    margin-top: 40px;
+}
+
+.recrutement-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.recrutement-intro h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--color-anthracite-dark);
+}
+
+.recrutement-intro p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--color-gray);
+}
+
+.recrutement-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.recrutement-card {
+    background: var(--color-white);
+    padding: 40px 30px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    transition: all var(--transition-base);
+}
+
+.recrutement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-accent);
+}
+
+.recrutement-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 24px;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recrutement-icon svg {
+    width: 32px;
+    height: 32px;
+    color: var(--color-anthracite-dark);
+}
+
+.recrutement-card h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--color-anthracite-dark);
+}
+
+.recrutement-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.recrutement-card ul li {
+    padding: 10px 0;
+    padding-left: 28px;
+    position: relative;
+    color: var(--color-gray);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.recrutement-card ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent-dark);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.recrutement-cta {
+    background: var(--color-white);
+    padding: 50px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    border: 2px solid var(--color-accent);
+}
+
+.cta-content {
+    margin-bottom: 30px;
+}
+
+.cta-content h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--color-anthracite-dark);
+}
+
+.cta-content p {
+    font-size: 1.1rem;
+    color: var(--color-gray);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-buttons .btn {
+    min-width: 200px;
+}
+
+.cta-buttons .btn svg {
+    width: 18px;
+    height: 18px;
 }
 
 /* Contact Section */
@@ -1232,6 +1534,15 @@ section {
         gap: 30px;
     }
     
+    .histoire-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .recrutement-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
     .contact-wrapper {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -1306,6 +1617,27 @@ section {
     
     .stat-item .stat-number {
         font-size: 2.5rem;
+    }
+    
+    .histoire-highlight {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .recrutement-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .recrutement-cta {
+        padding: 30px 20px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .cta-buttons .btn {
+        width: 100%;
     }
     
     .engagements-grid {
