@@ -11,9 +11,9 @@
     --color-white: #ffffff;
     --color-off-white: #f8f9fa;
     --color-cream: #fdfcfb;
-    --color-accent: #DBEBEB;
-    --color-accent-dark: #b8d4d4;
-    --color-accent-light: #e8f3f3;
+    --color-accent: #7FB3B3;
+    --color-accent-dark: #5a9999;
+    --color-accent-light: #a3c9c9;
     --color-blue: #2c3e50;
     --color-blue-light: #34495e;
     --color-gray: #636e72;
@@ -133,14 +133,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-primary {
     background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
-    color: var(--color-anthracite-dark);
-    box-shadow: 0 4px 15px rgba(219, 235, 235, 0.4);
+    color: var(--color-white);
+    box-shadow: 0 4px 15px rgba(127, 179, 179, 0.4);
     font-weight: 700;
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(219, 235, 235, 0.6);
+    box-shadow: 0 6px 20px rgba(127, 179, 179, 0.6);
     background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
 }
 
@@ -254,7 +254,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-link.nav-cta {
     background: var(--color-accent);
-    color: var(--color-anthracite-dark);
+    color: var(--color-white);
     padding: 12px 24px;
     border-radius: var(--radius-md);
     font-weight: 700;
@@ -266,7 +266,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-link.nav-cta:hover {
     background: var(--color-accent-dark);
-    color: var(--color-anthracite-dark);
+    color: var(--color-white);
 }
 
 .nav-toggle {
@@ -746,7 +746,7 @@ section {
 .highlight-icon svg {
     width: 30px;
     height: 30px;
-    color: var(--color-anthracite-dark);
+    color: var(--color-white);
 }
 
 .highlight-content h4 {
@@ -790,7 +790,7 @@ section {
     align-items: center;
     justify-content: center;
     gap: 16px;
-    color: var(--color-anthracite-dark);
+    color: var(--color-white);
 }
 
 .histoire-image-placeholder svg {
@@ -1177,7 +1177,7 @@ section {
 .recrutement-icon svg {
     width: 32px;
     height: 32px;
-    color: var(--color-anthracite-dark);
+    color: var(--color-white);
 }
 
 .recrutement-card h4 {
