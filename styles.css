@@ -214,8 +214,8 @@ h1, h2, h3, h4, h5, h6 {
     height: 60px;
     width: auto;
     background: #DBECEB;
-    padding: 8px;
-    border-radius: var(--radius-sm);
+    padding: 12px 20px;
+    border-radius: var(--radius-md);
     transition: transform var(--transition-base);
 }
 
