@@ -302,7 +302,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Hero Section */
 .hero {
-    min-height: 80vh;
+    min-height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -392,8 +392,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-buttons {
     display: flex;
+    flex-direction: row;
     gap: 16px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
 }
 
