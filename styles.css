@@ -306,7 +306,8 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 120px 0 60px;
+    align-items: center;
+    padding: 0;
     background-image: url('interior-modern-office.jpg');
     background-size: cover;
     background-position: center;
@@ -334,6 +335,7 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     position: relative;
     z-index: 1;
+    height: 100%;
 }
 
 .hero-content {
