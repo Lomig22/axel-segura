@@ -261,6 +261,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: var(--radius-md);
     font-weight: 700;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    margin-left: auto;
 }
 
 .nav-link.nav-cta::after {
