@@ -211,11 +211,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo-image {
-    height: 60px;
+    height: 80px;
     width: auto;
-    background: #DBECEB;
-    padding: 12px 20px;
-    border-radius: var(--radius-md);
     transition: transform var(--transition-base);
 }
 
@@ -224,7 +221,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar.scrolled .logo-image {
-    height: 50px;
+    height: 65px;
 }
 
 .nav-menu {
