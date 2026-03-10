@@ -327,9 +327,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
+    width: 100%;
+    padding: 0 60px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -338,9 +337,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-content {
-    max-width: 600px;
+    max-width: 550px;
     text-align: left;
-    margin-left: 80px;
 }
 
 .hero-badge {
