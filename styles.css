@@ -426,20 +426,21 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 16px 32px;
+    padding: 12px 24px;
     background: rgba(127, 179, 179, 0.4);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(127, 179, 179, 0.5);
-    border-radius: 12px;
+    border-radius: 10px;
     color: var(--color-white);
     font-family: var(--font-heading);
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     text-decoration: none;
     box-shadow: 0 4px 20px rgba(127, 179, 179, 0.3);
     transition: all 0.3s ease;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .btn-glass-primary:hover {
@@ -454,19 +455,20 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 16px 32px;
+    padding: 12px 24px;
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
+    border-radius: 10px;
     color: var(--color-white);
     font-family: var(--font-heading);
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     text-decoration: none;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
+    white-space: nowrap;
     cursor: pointer;
 }
 
