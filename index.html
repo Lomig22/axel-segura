@@ -101,9 +101,9 @@
                     <h1 class="hero-title">Votre projet de rénovation mérite un travail irréprochable.</h1>
                     <p class="hero-subtitle">Une équipe qualifiée, des matériaux de qualité et un suivi complet pour transformer votre logement en toute sérénité.</p>
                     <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-glass-primary">
+                        <button class="btn btn-glass-primary open-devis-modal">
                             Demander un devis gratuit
-                        </a>
+                        </button>
                         <a href="#realisations" class="btn btn-glass-secondary">
                             Voir nos réalisations
                         </a>
@@ -798,12 +798,21 @@
         const openDevisBtn = document.getElementById('openDevisModal');
         const closeDevisBtn = document.getElementById('closeDevisModal');
         const devisForm = document.getElementById('devisForm');
+        const heroDevisBtn = document.querySelector('.open-devis-modal');
 
-        // Open modal
-        openDevisBtn.addEventListener('click', () => {
+        // Function to open modal
+        const openModal = () => {
             devisModal.classList.add('active');
             document.body.style.overflow = 'hidden';
-        });
+        };
+
+        // Open modal from navbar button
+        openDevisBtn.addEventListener('click', openModal);
+
+        // Open modal from hero button
+        if (heroDevisBtn) {
+            heroDevisBtn.addEventListener('click', openModal);
+        }
 
         // Close modal with button
         closeDevisBtn.addEventListener('click', () => {
