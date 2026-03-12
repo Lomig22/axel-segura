@@ -651,7 +651,7 @@ section {
 
 /* Prestations Section */
 .prestations {
-    background: var(--color-white);
+    background: #faf8f5;
 }
 
 .prestations-grid {
