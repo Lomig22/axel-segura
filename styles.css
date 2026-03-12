@@ -672,7 +672,7 @@ section {
 }
 
 .prestation-card:hover {
-    background: var(--color-white);
+    background: #f5f1ec;
     border-color: var(--color-border);
     transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
