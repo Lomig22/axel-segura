@@ -1006,11 +1006,9 @@ section {
 
 .histoire-image-real {
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
     border-radius: var(--radius-lg);
-    background: var(--color-white);
-    padding: 30px;
 }
 
 .histoire-image-placeholder {
