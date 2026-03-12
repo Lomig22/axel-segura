@@ -663,7 +663,7 @@ section {
 }
 
 .prestation-card {
-    background: var(--color-off-white);
+    background: #f0ede8;
     padding: 40px 30px;
     border-radius: var(--radius-lg);
     text-align: center;
