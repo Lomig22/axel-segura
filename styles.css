@@ -423,9 +423,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-google-reviews {
-    margin-top: 24px;
-    display: flex;
-    justify-content: center;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    z-index: 10;
 }
 
 .google-reviews-badge {
@@ -2677,6 +2678,30 @@ section {
     .hero-buttons .btn {
         width: 100%;
         max-width: 300px;
+    }
+    
+    .hero-google-reviews {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .google-reviews-badge {
+        padding: 8px 14px;
+        gap: 10px;
+    }
+    
+    .google-icon {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .google-reviews-stars svg {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .google-reviews-text {
+        font-size: 0.75rem;
     }
 }
 
