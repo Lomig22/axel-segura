@@ -706,7 +706,11 @@
                     </a>
                 </div>
                 <div class="contact-form-wrapper fade-up delay-1">
-                    <form class="contact-form" id="contactForm">
+                    <form class="contact-form" id="contactForm" action="https://formsubmit.co/axel.segura13.AS@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="Nouvelle demande de contact - Site Axel SEGURA">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="https://axel-segura.vercel.app/#contact">
                         <div class="form-group">
                             <label for="name">Nom complet</label>
                             <input type="text" id="name" name="name" required placeholder="Votre nom">
@@ -1039,17 +1043,6 @@
                 }
             }, { passive: true });
         }
-
-        // Form submission
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            console.log('Form submitted:', data);
-            alert('Merci pour votre demande ! Nous vous recontacterons rapidement.');
-            this.reset();
-        });
 
         // Timeline animation
         const timelineObserver = new IntersectionObserver((entries) => {
