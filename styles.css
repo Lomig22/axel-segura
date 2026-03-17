@@ -1593,6 +1593,152 @@ section {
     }
 }
 
+/* Gallery Carousel */
+.gallery-carousel {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid var(--color-border);
+}
+
+.carousel-title {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-anthracite-dark);
+    margin-bottom: 30px;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.carousel-track-container {
+    flex: 1;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+    min-width: calc(33.333% - 10px);
+    margin: 0 5px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-slide:hover {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-lg);
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--color-white);
+    border: 2px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    flex-shrink: 0;
+}
+
+.carousel-btn:hover {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.carousel-btn:hover svg {
+    color: var(--color-white);
+}
+
+.carousel-btn svg {
+    width: 24px;
+    height: 24px;
+    color: var(--color-anthracite);
+    transition: color var(--transition-base);
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--color-gray-light);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.carousel-dot:hover {
+    background: var(--color-gray);
+}
+
+.carousel-dot.active {
+    background: var(--color-accent);
+    transform: scale(1.2);
+}
+
+@media (max-width: 900px) {
+    .carousel-slide {
+        min-width: calc(50% - 10px);
+    }
+    
+    .carousel-slide img {
+        height: 200px;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .carousel-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .carousel-slide {
+        min-width: calc(100% - 10px);
+    }
+    
+    .carousel-container {
+        gap: 10px;
+    }
+    
+    .carousel-title {
+        font-size: 1.2rem;
+    }
+}
+
 /* Engagements Section */
 .engagements {
     background: var(--color-white);
