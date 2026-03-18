@@ -228,6 +228,7 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 999;
 }
 
 .nav-cta-phone {
@@ -2606,6 +2607,9 @@ section {
         gap: 24px;
         box-shadow: var(--shadow-xl);
         transition: right var(--transition-base);
+        z-index: 1000;
+        transform: none;
+        left: auto;
     }
     
     .nav-menu.active {
@@ -2615,6 +2619,26 @@ section {
     .nav-toggle {
         display: flex;
         z-index: 1001;
+    }
+    
+    .nav-container {
+        padding: 0 20px;
+    }
+    
+    .nav-cta-group {
+        display: none;
+    }
+    
+    .container {
+        padding: 0 20px;
+    }
+    
+    .logo-image {
+        height: 70px;
+    }
+    
+    .navbar.scrolled .logo-image {
+        height: 60px;
     }
     
     .hero {
@@ -2840,6 +2864,79 @@ section {
     
     .google-reviews-badge .google-reviews-count {
         font-size: 0.75rem;
+    }
+    
+    .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .comparison-slider {
+        aspect-ratio: 4/3;
+    }
+    
+    .comparison-handle-circle {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .comparison-handle-circle svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .comparison-caption {
+        padding: 20px 16px;
+    }
+    
+    .comparison-caption h4 {
+        font-size: 1.1rem;
+    }
+    
+    .comparison-caption p {
+        font-size: 0.9rem;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .carousel-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .carousel-dots {
+        gap: 8px;
+        margin-top: 20px;
+    }
+    
+    .carousel-dot {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .btn-show-more {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+    
+    .section-header {
+        margin-bottom: 40px;
+    }
+    
+    .section-tag {
+        font-size: 0.75rem;
+        padding: 6px 14px;
+    }
+    
+    .section-subtitle {
+        font-size: 0.95rem;
     }
 }
 
