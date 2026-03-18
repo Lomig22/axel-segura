@@ -2631,7 +2631,7 @@ section {
     }
     
     .nav-cta-group {
-        display: none;
+        display: none !important;
     }
     
     .nav-menu-cta-mobile {
