@@ -336,8 +336,8 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     justify-content: center;
     padding: 120px 0 60px;
-    background-image: url('Design sans titre (50).png');
-    background-size: cover;
+    background-image: url('Design sans titre (51).png');
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
