@@ -922,6 +922,7 @@
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_template" value="table">
                         <input type="hidden" name="_next" value="https://axel-segura.vercel.app/#contact">
+                        <input type="hidden" name="_autoresponse" value="Merci pour votre message. Nous avons bien reçu votre demande et vous répondrons dans les plus brefs délais.">
                         <div class="form-group">
                             <label for="name">Nom complet</label>
                             <input type="text" id="name" name="name" required placeholder="Votre nom">
@@ -948,6 +949,16 @@
                             Envoyer ma demande
                         </button>
                     </form>
+                    <div class="contact-success" id="contactSuccess">
+                        <div class="contact-success-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="48" height="48">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                        </div>
+                        <h3>Message envoyé !</h3>
+                        <p>Votre demande a bien été réceptionnée. Nous vous répondrons dans les plus brefs délais.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1365,6 +1376,33 @@
             devisModal.classList.remove('active');
             document.body.style.overflow = '';
         });
+
+        // Contact form with success message
+        const contactForm = document.getElementById('contactForm');
+        const contactSuccess = document.getElementById('contactSuccess');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const submitBtn = this.querySelector('button[type="submit"]');
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Envoi en cours...';
+
+                try {
+                    const formData = new FormData(this);
+                    await fetch(this.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    contactForm.style.display = 'none';
+                    contactSuccess.style.display = 'flex';
+                } catch (err) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;display:inline-block;vertical-align:middle;margin-right:8px;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>Envoyer ma demande';
+                }
+            });
+        }
     </script>
 </body>
 </html>
