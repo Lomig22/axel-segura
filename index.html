@@ -70,7 +70,10 @@
             <button class="modal-close" id="closeDevisModal">&times;</button>
             <h2 class="modal-title">Demande de devis gratuit</h2>
             <p class="modal-subtitle">Remplissez le formulaire ci-dessous et nous vous recontacterons dans les plus brefs délais.</p>
-            <form class="devis-form" id="devisForm">
+            <form class="devis-form" id="devisForm" action="https://formsubmit.co/axel.segura13.AS@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="Nouvelle demande de devis - Site Axel SEGURA">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="devis-nom">Nom *</label>
@@ -106,8 +109,18 @@
                     <label for="devis-message">Description du projet *</label>
                     <textarea id="devis-message" name="message" rows="4" required placeholder="Décrivez votre projet en quelques lignes..."></textarea>
                 </div>
-                <button type="submit" class="btn-submit-devis">Envoyer ma demande</button>
+                <button type="submit" class="btn-submit-devis" id="devisBtnSubmit">Envoyer ma demande</button>
             </form>
+            <div class="devis-success" id="devisSuccess">
+                <div class="contact-success-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="48" height="48">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                </div>
+                <h3>Demande envoyée !</h3>
+                <p>Votre demande de devis a bien été réceptionnée. Nous vous recontacterons dans les plus brefs délais.</p>
+            </div>
         </div>
     </div>
 
@@ -1322,6 +1335,12 @@
             // Close mobile menu if open
             navMenu.classList.remove('active');
             navToggle.classList.remove('active');
+            // Reset form state
+            devisForm.style.display = '';
+            document.getElementById('devisSuccess').style.display = 'none';
+            devisForm.reset();
+            const submitBtn = document.getElementById('devisBtnSubmit');
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Envoyer ma demande'; }
         };
 
         // Open modal from navbar button
@@ -1361,20 +1380,26 @@
             }
         });
 
-        // Form submission
-        devisForm.addEventListener('submit', (e) => {
+        // Form submission - devis modal via FormSubmit
+        devisForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-            const formData = new FormData(devisForm);
-            const data = Object.fromEntries(formData);
-            console.log('Devis form submitted:', data);
-            
-            // Show success message
-            alert('Merci pour votre demande de devis ! Nous vous recontacterons dans les plus brefs délais.');
-            
-            // Reset form and close modal
-            devisForm.reset();
-            devisModal.classList.remove('active');
-            document.body.style.overflow = '';
+            const submitBtn = document.getElementById('devisBtnSubmit');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Envoi en cours...';
+
+            try {
+                const formData = new FormData(devisForm);
+                await fetch('https://formsubmit.co/axel.segura13.AS@gmail.com', {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+                devisForm.style.display = 'none';
+                document.getElementById('devisSuccess').style.display = 'flex';
+            } catch (err) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Envoyer ma demande';
+            }
         });
 
         // Contact form with success message
