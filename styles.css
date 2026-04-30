@@ -2440,6 +2440,25 @@ section {
     color: var(--color-gray);
 }
 
+.footer-credit {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--color-gray);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color var(--transition-base);
+}
+
+.footer-credit:hover {
+    color: var(--color-accent);
+}
+
+.footer-credit img {
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
 .footer-legal {
     display: flex;
     gap: 20px;
