@@ -76,10 +76,10 @@
             <button class="modal-close" id="closeDevisModal">&times;</button>
             <h2 class="modal-title">Demande de devis gratuit</h2>
             <p class="modal-subtitle">Remplissez le formulaire ci-dessous et nous vous recontacterons dans les plus brefs délais.</p>
-            <form class="devis-form" id="devisForm" action="https://formsubmit.co/axel.segura13.AS@gmail.com" method="POST">
-                <input type="hidden" name="_subject" value="Nouvelle demande de devis - Site Axel SEGURA">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
+            <form class="devis-form" id="devisForm" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="01f8b6a1-da09-4c61-a4e6-4bc80c99e0df">
+                <input type="hidden" name="subject" value="Nouvelle demande de devis - Site Axel SEGURA">
+                <input type="hidden" name="from_name" value="Site Axel SEGURA">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="devis-nom">Nom *</label>
@@ -936,12 +936,10 @@
                     </a>
                 </div>
                 <div class="contact-form-wrapper fade-up delay-1">
-                    <form class="contact-form" id="contactForm" action="https://formsubmit.co/axel.segura13.AS@gmail.com" method="POST">
-                        <input type="hidden" name="_subject" value="Nouvelle demande de contact - Site Axel SEGURA">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_next" value="https://axel-segura.vercel.app/#contact">
-                        <input type="hidden" name="_autoresponse" value="Merci pour votre message. Nous avons bien reçu votre demande et vous répondrons dans les plus brefs délais.">
+                    <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="01f8b6a1-da09-4c61-a4e6-4bc80c99e0df">
+                        <input type="hidden" name="subject" value="Nouvelle demande de contact - Site Axel SEGURA">
+                        <input type="hidden" name="from_name" value="Site Axel SEGURA">
                         <div class="form-group">
                             <label for="name">Nom complet</label>
                             <input type="text" id="name" name="name" required placeholder="Votre nom">
@@ -1402,7 +1400,7 @@
             }
         });
 
-        // Form submission - devis modal via FormSubmit
+        // Form submission - devis modal via Web3Forms
         devisForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             const submitBtn = document.getElementById('devisBtnSubmit');
@@ -1411,16 +1409,22 @@
 
             try {
                 const formData = new FormData(devisForm);
-                await fetch('https://formsubmit.co/axel.segura13.AS@gmail.com', {
+                const res = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
                     body: formData,
                     headers: { 'Accept': 'application/json' }
                 });
-                devisForm.style.display = 'none';
-                document.getElementById('devisSuccess').style.display = 'flex';
+                const data = await res.json();
+                if (data.success) {
+                    devisForm.style.display = 'none';
+                    document.getElementById('devisSuccess').style.display = 'flex';
+                } else {
+                    throw new Error(data.message);
+                }
             } catch (err) {
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Envoyer ma demande';
+                alert('Une erreur est survenue. Veuillez réessayer ou nous appeler directement.');
             }
         });
 
@@ -1437,16 +1441,22 @@
 
                 try {
                     const formData = new FormData(this);
-                    await fetch(this.action, {
+                    const res = await fetch('https://api.web3forms.com/submit', {
                         method: 'POST',
                         body: formData,
                         headers: { 'Accept': 'application/json' }
                     });
-                    contactForm.style.display = 'none';
-                    contactSuccess.style.display = 'flex';
+                    const data = await res.json();
+                    if (data.success) {
+                        contactForm.style.display = 'none';
+                        contactSuccess.style.display = 'flex';
+                    } else {
+                        throw new Error(data.message);
+                    }
                 } catch (err) {
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;display:inline-block;vertical-align:middle;margin-right:8px;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>Envoyer ma demande';
+                    alert('Une erreur est survenue. Veuillez réessayer ou nous appeler directement.');
                 }
             });
         }
