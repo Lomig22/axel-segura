@@ -1763,6 +1763,42 @@ section {
     transform: rotate(180deg);
 }
 
+.google-review-cta {
+    text-align: center;
+    margin-top: 48px;
+    padding: 36px;
+    background: var(--color-cream);
+    border-radius: 16px;
+    border: 1px solid var(--color-border);
+}
+
+.google-review-cta p {
+    font-size: 1.05rem;
+    color: var(--color-gray);
+    margin-bottom: 20px;
+}
+
+.btn-google-review {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    color: #3c4043;
+    border: 1.5px solid #dadce0;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-google-review:hover {
+    box-shadow: var(--shadow-md);
+    border-color: #4285F4;
+}
+
 /* Gallery Carousel */
 .gallery-carousel {
     margin-top: 0;
