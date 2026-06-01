@@ -25,6 +25,11 @@
       "source": "/politique-confidentialite.html",
       "destination": "/politique-confidentialite",
       "permanent": true
+    },
+    {
+      "source": "/renovation-allauch.html",
+      "destination": "/renovation-allauch",
+      "permanent": true
     }
   ],
   "cleanUrls": true,
